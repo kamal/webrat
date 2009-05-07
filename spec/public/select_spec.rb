@@ -214,11 +214,7 @@ describe "select" do
       click_button
     end
 
-    if Webrat.on_java?
-      spec.call
-    else
-      pending("needs bug fix", &spec)
-    end
+    pending("needs bug fix", &spec)
   end
 
   it "should properly handle locating with HTML entities in select values" do
@@ -237,11 +233,7 @@ describe "select" do
       }.should_not raise_error(Webrat::NotFoundError)
     end
 
-    if Webrat.on_java?
-      spec.call
-    else
-      pending("needs bug fix", &spec)
-    end
+    pending("needs bug fix", &spec)
   end
   
   it "should submit duplicates selected options as a single value" do

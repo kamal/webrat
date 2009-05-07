@@ -344,11 +344,7 @@ describe "click_button" do
       click_button
     end
 
-    if Webrat.on_java?
-      spec.call
-    else
-      pending("needs bug fix", &spec)
-    end
+    pending("needs bug fix", &spec)
   end
 
   it "should send default selected option value from select" do

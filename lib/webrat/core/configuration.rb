@@ -20,13 +20,13 @@ module Webrat
   #   end
   class Configuration
 
-    # Should XHTML be parsed with Nokogiri? Defaults to true, except on JRuby. When false, Hpricot and REXML are used
+    # Should XHTML be parsed with Nokogiri? Defaults to true. When false, Hpricot and REXML are used
     attr_writer :parse_with_nokogiri
 
     # Webrat's mode, set automatically when requiring webrat/rails, webrat/merb, etc.
     attr_reader :mode # :nodoc:
 
-    # Save and open pages with error status codes (500-599) in a browser? Defualts to true.
+    # Save and open pages with error status codes (500-599) in a browser? Defaults to true.
     attr_writer :open_error_files
 
     # Which rails environment should the selenium tests be run in? Defaults to selenium.
@@ -60,7 +60,7 @@ module Webrat
 
     def initialize # :nodoc:
       self.open_error_files = true
-      self.parse_with_nokogiri = !Webrat.on_java?
+      self.parse_with_nokogiri = true
       self.application_environment = :test
       self.application_port = 3001
       self.application_address = 'localhost'
